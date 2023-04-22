@@ -1,0 +1,32 @@
+project/
+├── app/
+│   ├── controllers/
+│   │   ├── HomeController.php
+│   │   └── ...
+│   ├── models/
+│   │   ├── UserModel.php
+│   │   └── ...
+│   └── views/
+│       ├── home/
+│       │   ├── index.php
+│       │   └── ...
+│       └── ...
+├── public/
+│   ├── css/
+│   ├── img/
+│   └── js/
+└── index.php
+└── ...
+
+
+Thư mục app chứa mã nguồn của ứng dụng.
+
+Thư mục controllers chứa các file điều khiển (controllers) của ứng dụng. Mỗi file điều khiển đại diện cho một chức năng của ứng dụng và có nhiệm vụ xử lý các yêu cầu từ người dùng, tương tác với cơ sở dữ liệu và trả về kết quả cho người dùng.
+
+Thư mục models chứa các file mô hình (models) của ứng dụng. Mỗi file mô hình đại diện cho một bảng trong cơ sở dữ liệu và có nhiệm vụ truy vấn và xử lý dữ liệu liên quan đến bảng đó.
+
+Thư mục views chứa các file giao diện (views) của ứng dụng. Mỗi file giao diện đại diện cho một trang hoặc một phần của trang và có nhiệm vụ hiển thị dữ liệu cho người dùng.
+
+Thư mục public chứa các tài nguyên tĩnh của ứng dụng, bao gồm các file CSS, JavaScript và hình ảnh.
+
+File index.php là file đầu vào của ứng dụng, được sử dụng để định tuyến các yêu cầu đến các file điều khiển tương ứng.

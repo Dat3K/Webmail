@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBMAIL</title>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="../../public/CSS/web.css">
+
+    <script src="../../public/js/mail.js"></script>
+    <script src="../../public/js/displayweb.js"></script>
+</head>
+<body>
+    <nav class="mnb navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="fa fa-bars"></i>
+                </button>
+            <div style="padding: 15px 0;">
+                <a href="#" id="msbo"><i class="fa fa-bars"></i></a>
+            </div>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">En</a></li>
+                <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cài đặt <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Cài đặt</a></li>
+                    <li><a href="#">Trợ giúp</a></li>
+                    <li><a href="#">Cập nhập</a></li>
+                    <li><input type="text" id="show_user"></input></li>
+                </ul>
+                </li>
+                <li><a href="sign_in.html" onclick="logOut()"><i>Logout</i></a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <input id="search" type="text" class="form-control" placeholder="Search...">
+            </form>
+            </div>
+        </div>
+    </nav>
+      <!--msb: main sidebar-->
+      <div class="msb" id="msb">
+              <nav class="navbar navbar-default" role="navigation">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                      <div class="brand-wrapper">
+                          <!-- Brand -->
+                          <div class="brand-name-wrapper">
+                            <img src="../../public/img/home/gmail.png" alt="gmail" style="height: 50px; width: 50px;">
+                              <a class="navbar-brand" href="#">
+                                  WEBMAIL 
+                              </a>
+                          </div>
+      
+                      </div>
+      
+                  </div>
+      
+                  <!-- Main Menu -->
+                  <div class="side-menu-container">
+                      <ul class="nav navbar-nav">
+      
+                          <li><a href="#" onclick="getInbox()" ><i class="fa fa-dashboard"></i> Mail</a></li>
+                          <!-- <li class="active"><a href="#"><i class="fa fa-puzzle-piece"></i> Components</a></li> -->
+                          <li><a href="#" onclick="getStarredMail()" ><i class="fa fa-star" style="color: yellow;"></i> Đã đánh dấu</a></li>      
+                          <div id="user_id" data-id=""></div>
+
+                          <!-- Dropdown-->
+                          <li class="panel panel-default" id="dropdown">
+                              <a data-toggle="collapse" href="#dropdown-lvl1">
+                                  <i class="fa fa-list"></i> Danh sách mở rộng
+                                <span class="caret"></span>
+                            </a>
+                              <!-- Dropdown level 1 -->
+                              <div id="dropdown-lvl1" class="panel-collapse collapse">
+                                  <div class="panel-body">
+                                      <ul class="nav navbar-nav">
+                                          <li><a href="#" onclick="getAllMail()">Tất cả thư</a></li>
+                                          <!-- <li><a href="#">Đã lên lịch</a></li> -->
+                                          <li><a href="#" onclick="getTrashMail()">Thư rác</a></li>
+                                          <li><a href="#" onclick="getDeletedMail()">Thùng rác</a></li>
+                                          <li><a href="#" onclick="getArchivedMail()">Đã lưu</a></li>                                                                                                           
+                                        </ul>
+                                  </div>
+                              </div>
+                          </li>
+                      </ul>
+                  </div>
+              </nav>  
+      </div>
+      <!--main content wrapper-->
+      <div class="mcw">
+        <!--navigation here-->
+        <!--main content view-->
+        <div class="cv">
+          <div>
+           <div class="inbox">
+             <div class="inbox-sb">
+               
+             </div>
+             <div class="inbox-bx container-fluid">
+               <div class="row">
+                 <div class="col-md-2">
+                   <ul>
+                    <li><a href="#" onclick="getInbox()"><img src="../../public/img/home/inbox.png" style="height: 15px; width: 20px;"> Hộp thư đến</a></li>
+                    <li><a href="send.html"> <img src="../../public/img/home/compose.png" style="height: 15px; width: 20px;"> Soạn thư</a></li>
+                    <li><a href="#" onclick="getUnreadMail()"><img src="../../public/img/home/bookmark.png" style="height: 15px; width: 20px;"> Thư chưa đọc</a></li>
+                    <li><a href="#" onclick="getSentMail()"><img src="../../public/img/home/send.png" style="height: 15px; width: 20px;"> Thư đã gửi</a></li>    
+                   </ul>
+                 </div>
+                 <div class="col-md-10">
+                   <table class="table table-stripped">
+                     <tbody id="list_mail">
+                       <tr>
+                         <td rowspan="5">
+                          <div class="h2">Title</div><br>
+                          <div class="h3">Sender</div>
+                        </td>
+                       </tr>
+                     </tbody>
+                   </table>
+                 </div>
+               </div>
+             </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </body>
+</html>

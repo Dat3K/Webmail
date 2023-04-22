@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thư Mới</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="../../public/CSS/sendstyle.css">
+</head>
+
+<body>
+  <div class="compose-email">
+    <div class="email-header">
+      <h1>Thư Mới</h1>
+    </div>
+    <div class="form" >
+      <p><label>To:</label>
+        <input type="text" name="to[]" id="email" required>
+      </p>
+      <p><label>Cc: <input type="text" name="cc[]"></label></p>
+      <p><label>Bcc: <input type="text" name="bcc[]"></label></p>
+      <p><label>Tiêu đề: <input type="text" name="subject" id="subject" required></label></p>
+      <p><label>Nội dung: <br><textarea name="body" id="content" required></textarea></label></p>
+      <p><label>Đính kèm file: <input type="file" name="attachment" id="attachment"></label></p>
+      <p><button type="button" onclick="addRecipient()">Thêm người nhận</button></p>
+      <button type="submit" class="btn btn-primary" id="btnSubmit" onclick="btnSubmit()">Gửi</button>
+    </div>
+  </div>
+  <script src="../../public/js/sendmail.js"></script>
+</body>
+</html>

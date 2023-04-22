@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-light">
+    <div class="container mt-5 w-75 shadow rounded-lg">
+      <div class="row">
+        <!-- Col SignUp -->
+        <div class="col-md ml-0 gx-0 px-0">
+          <!--Title  -->
+          <div class="m-5">
+            <div class="h1 m-3 fw-bold text-danger">Sign Up</div>
+            <form method="post">
+              <!-- Username -->
+              <div class="input-group m-3 mt-5">
+                <div class="p-2">
+                  <img src="../../public/img/form/customer.png" alt="" />
+                </div>
+                <input
+                  type="text"
+                  id="register_name"
+                  name="username"
+                  placeholder="Username"
+                  class="tbUser w-75 border-0 border-bottom border-dark bg-light"
+                />
+              </div>
+
+              <!-- Email -->
+              <div class="input-group m-3">
+                <div class="p-2">
+                  <img src="../../public/img/form/mail.png" alt="" />
+                </div>
+                <input
+                  type="text"
+                  id="register_email"
+                  name="email"
+                  placeholder="Email"
+                  class="tbUser w-75 border-0 border-bottom border-dark bg-light"
+                />
+              </div>
+
+              <!-- Password -->
+              <div class="input-group m-3">
+                <div class="p-2">
+                  <img src="../../public/img/form/key.png" alt="" />
+                </div>
+                <input
+                  type="password"
+                  id="register_password"
+                  name="password"
+                  aria-describedby="cus"
+                  placeholder="Password"
+                  class="tbPw w-75 border-0 border-bottom border-dark bg-light"
+                />
+              </div>
+
+              <!-- RePassword -->
+              <div class="input-group m-3">
+                <div class="p-2">
+                  <img src="../../public/img/form/key.png" alt="" />
+                </div>
+                <input
+                  type="password"
+                  id="register_re_password"
+                  aria-describedby="cus"
+                  placeholder="Re-Password"
+                  class="tbPw w-75 border-0 border-bottom border-dark bg-light"
+                />
+              </div>
+
+              <!-- Remember me -->
+              <div class="input-group m-3">
+                <div class="mx-2"><input type="checkbox" name="" id="" /></div>
+                <div>Remember me</div>
+              </div>
+
+              <!-- Error Alert -->
+              <div id="error"></div>
+
+              <!-- Register Btn -->
+              <button
+                type="submit"
+                id="register_btn"
+                value="register"
+                class="btn btn-outline-primary m-2 ml-4 p-2 px-4 my-3"
+              >
+                Sign Up
+              </button>
+
+              <!-- Sign up With ... -->
+              <div class="mt-5 text-center">
+                <div>
+                  Or sign up with
+                  <img src="../../public/img/form/gmail.png" alt="" />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- Col Create Account -->
+        <div class="col-md m-0 px-0 gx-0 align-items-center text-center">
+          <div class="row my-5 py-5">
+            <img
+              class="img-fluid"
+              src="../../public/img/form/register.png"
+              alt=""
+            />
+          </div>
+          <a href="sign_in.html" class="text-decoration-none"
+            >Have an account?</a
+          >
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.slim.js"
+      integrity="sha256-dWvV84T6BhzO4vG6gWhsWVKVoa4lVmLnpBOZh/CAHU4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../public/js/login.js"></script>
+  </body>
+</html>
